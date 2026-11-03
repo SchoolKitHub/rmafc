@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://www.rmafcinvestmentsummit2026.org/sitemap.xml
