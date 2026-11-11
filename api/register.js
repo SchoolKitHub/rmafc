@@ -122,24 +122,39 @@ export default async function handler(req, res) {
   const ref = reference();
   const attachments = Array.isArray(d.attachments) ? d.attachments.slice(0, 20) : [];
 
+  const base = {
+    Reference: ref,
+    Category: d.category || '',
+    'Full name': String(d.fullName).trim(),
+    Organization: d.company || '',
+    Position: d.position || '',
+    Country: d.country || '',
+    Email: String(d.email).trim(),
+    Phone: d.phone || '',
+    'Area of interest': d.interest || '',
+    'Dietary requirements': d.dietary || '',
+    'Investment interests': d.investment || '',
+    'Other information': d.other || '',
+    Documents: attachments.map(a => ({ url: a.url, filename: a.filename })),
+    Status: 'New',
+    'Submitted at': new Date().toISOString()
+  };
+  // Newer fields. If the Airtable table has no column for them yet, the record
+  // is saved without them and they are written into "Other information" instead.
+  const extra = {
+    'Company address': d.address || '',
+    'Fundraise amount': d.fundraise || ''
+  };
+
   try {
-    await airtableCreate({
-      Reference: ref,
-      Category: d.category || '',
-      'Full name': String(d.fullName).trim(),
-      Organization: d.company || '',
-      Position: d.position || '',
-      Country: d.country || '',
-      Email: String(d.email).trim(),
-      Phone: d.phone || '',
-      'Area of interest': d.interest || '',
-      'Dietary requirements': d.dietary || '',
-      'Investment interests': d.investment || '',
-      'Other information': d.other || '',
-      Documents: attachments.map(a => ({ url: a.url, filename: a.filename })),
-      Status: 'New',
-      'Submitted at': new Date().toISOString()
-    });
+    try {
+      await airtableCreate({ ...base, ...extra });
+    } catch (err) {
+      if (!/UNKNOWN_FIELD_NAME/.test(String(err && err.message))) throw err;
+      console.error('airtable: missing column for new fields, saving them in Other information', err.message);
+      const note = Object.entries(extra).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n');
+      await airtableCreate({ ...base, 'Other information': [base['Other information'], note].filter(Boolean).join('\n\n') });
+    }
   } catch (err) {
     console.error('airtable failed', err);
     return res.status(500).json({ error: TEXT.server });
