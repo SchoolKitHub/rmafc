@@ -8,6 +8,7 @@
 //   MAIL_FROM           e.g. "RMAFC Summit <summit@rmafc.gov.ng>"
 //   MAIL_REPLY_TO       optional inbox that receives replies to the confirmation
 //   MAIL_BCC            optional secretariat address copied on every confirmation
+//   RESEND_AUDIENCE_ID  optional legacy audience id; omit to add registrants as global contacts
 //   BLOB_READ_WRITE_TOKEN  added automatically when you create a Blob store
 
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || 'appoMRpjGyCkdRKob';
@@ -84,6 +85,31 @@ async function sendConfirmation(d, ref) {
   if (!r.ok) console.error('confirmation email failed', await r.text());
 }
 
+// Adds the registrant to Resend Contacts so they can receive broadcasts.
+// Uses a global contact unless RESEND_AUDIENCE_ID is set (legacy audiences).
+async function addContact(d) {
+  if (!process.env.RESEND_API_KEY) return;
+  const parts = String(d.fullName || '').trim().split(/\s+/);
+  const audience = process.env.RESEND_AUDIENCE_ID;
+  const url = audience
+    ? `https://api.resend.com/audiences/${audience}/contacts`
+    : 'https://api.resend.com/contacts';
+  const r = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: String(d.email).trim(),
+      first_name: parts[0] || '',
+      last_name: parts.slice(1).join(' '),
+      unsubscribed: false
+    })
+  });
+  if (!r.ok) console.error('add contact failed', await r.text());
+}
+
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
@@ -123,6 +149,12 @@ export default async function handler(req, res) {
     await sendConfirmation({ ...d, attachments }, ref);
   } catch (err) {
     console.error('email failed', err);
+  }
+
+  try {
+    await addContact(d);
+  } catch (err) {
+    console.error('contact failed', err);
   }
 
   return res.status(200).json({ ok: true, reference: ref });
