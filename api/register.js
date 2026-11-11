@@ -50,7 +50,7 @@ function confirmationHtml(d, ref) {
     </td></tr>
     <tr><td style="padding:30px;">
       <p style="margin:0 0 18px;font-size:17px;line-height:1.6;">Dear ${d.fullName || 'Delegate'},</p>
-      <p style="margin:0 0 18px;font-size:17px;line-height:1.6;">Your registration for the 2026 Oil &amp; Gas Investment Summit, holding 25 and 26 November 2026 in Beijing, has been received by the Revenue Mobilisation Allocation and Fiscal Commission.</p>
+      <p style="margin:0 0 18px;font-size:17px;line-height:1.6;">Your registration for the 2026 Oil &amp; Gas Investment Summit, holding 24 and 25 February 2027 in Beijing, has been received by the Revenue Mobilisation Allocation and Fiscal Commission.</p>
       <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="border-top:1px solid #dcdfd8;margin:0 0 22px;font-family:Helvetica,Arial,sans-serif;font-size:14px;">
         <tr><td style="padding:12px 0 4px;color:#61708c;">Reference</td><td style="padding:12px 0 4px;text-align:right;">${ref}</td></tr>
         <tr><td style="padding:4px 0;color:#61708c;">Category</td><td style="padding:4px 0;text-align:right;">${d.category || '—'}</td></tr>
