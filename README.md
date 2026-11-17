@@ -80,3 +80,21 @@ Google Search Console (verified by file)
 
 If the site moves to its own domain, replace rmafcinvestmentsummit2026.org
 in index.html, sitemap.xml and robots.txt.
+
+## Prerendered content (run after every rebuild)
+
+Each page is a self-unpacking bundle, so the raw HTML a crawler downloads
+has almost no text. scripts/prerender.mjs renders every page in sitemap.xml
+and writes its visible content into the page body between
+<!-- prerender:start --> and <!-- prerender:end -->. The bundle replaces the
+whole document when it unpacks, so visitors see the normal site; Baidu, Bing,
+link previews and AI crawlers get the real text.
+
+  npm i --no-save playwright && npx playwright install chromium
+  node scripts/prerender.mjs
+
+A fresh export from the design tool wipes the block, so run it again before
+every deploy. The opportunities page H1, title, description and FAQ section
+(plus its FAQPage JSON-LD and Chinese strings) were edited directly in the
+bundle template; carry those edits into the design source too or a rebuild
+will undo them.
