@@ -5,7 +5,7 @@
 //   AIRTABLE_BASE_ID    e.g. appXXXXXXXXXXXXXX
 //   AIRTABLE_TABLE      table name, default "Registrations"
 //   RESEND_API_KEY      Resend API key (optional — omit to skip the email)
-//   MAIL_FROM           e.g. "RMAFC Summit <summit@rmafc.gov.ng>"
+//   MAIL_FROM           e.g. "RMAFC Summit <summit@rmafcinvestmentsummit2026.org>"
 //   MAIL_REPLY_TO       optional inbox that receives replies to the confirmation
 //   MAIL_BCC            optional secretariat address copied on every confirmation
 //   RESEND_AUDIENCE_ID  optional legacy audience id; omit to add registrants as global contacts
