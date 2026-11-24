@@ -58,6 +58,9 @@
   .gallery figure{margin:0;position:relative;overflow:hidden;background:#162238}
   .gallery img{display:block;width:100%;height:100%;aspect-ratio:16/10;object-fit:cover}
   .gallery figure:first-child img{aspect-ratio:16/9}
+  .gallery .grid.three figure:first-child{grid-row:span 2}
+  .gallery .grid.three figure:first-child img{aspect-ratio:auto}
+  .gallery .grid.three figure:not(:first-child) img{aspect-ratio:16/9}
   .gallery figcaption{position:absolute;left:0;bottom:0;background:rgba(11,21,38,.78);color:#f2f4f1;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px}
   .gallery .illus{color:#8e9ab0;font-size:13px;margin:10px 0 0}
   section{padding:52px 0;border-bottom:1px solid var(--line)}
@@ -84,7 +87,7 @@
   footer{background:#0b1526;color:#a9b4c7;padding:40px 0;font-size:14px}
   footer .row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
   footer a{color:#fff}
-  @media (max-width:860px){.gallery .grid{grid-template-columns:1fr}.wrap{padding:0 18px}.cols{grid-template-columns:1fr;gap:32px}nav.links a.hide-sm{display:none}header.top .wrap{height:auto;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}.fact{grid-template-columns:1fr;gap:2px}}
+  @media (max-width:860px){.gallery .grid{grid-template-columns:1fr}.gallery .grid.three figure:first-child{grid-row:auto}.gallery .grid.three figure:first-child img{aspect-ratio:16/9}.wrap{padding:0 18px}.cols{grid-template-columns:1fr;gap:32px}nav.links a.hide-sm{display:none}header.top .wrap{height:auto;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}.fact{grid-template-columns:1fr;gap:2px}}
 </style>
 </head>
 <body>
@@ -118,8 +121,8 @@
 
 <div class="gallery">
   <div class="wrap">
-    <div class="grid">{{GALLERY}}</div>
-    <p class="illus" data-zh="示意图片。企业提供实景照片后将予以替换。">Illustrative images. They will be replaced with the company's own photographs once supplied.</p>
+    <div class="{{GRIDCLASS}}">{{GALLERY}}</div>
+    {{GALLERYNOTE}}
   </div>
 </div>
 

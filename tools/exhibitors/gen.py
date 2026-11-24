@@ -47,25 +47,32 @@ COMPANIES = [
   sources=[]),
 
  dict(slug='hilltop-global', name="Hilltop Global Oil and Gas Solutions Int'l Ltd", zh='希尔托普环球油气解决方案国际有限公司',
+  own_photos=True,
   kicker=('Upstream · Marginal field', '上游 · 边际油田'),
-  lede=('A Benin City-based oil company holding the Alaoma marginal field in the onshore Niger Delta, and seeking investment to bring its heavy crude into production.',
-        '一家总部位于贝宁城的石油公司，持有尼日尔三角洲陆上的Alaoma边际油田，正在寻求投资以推动其重质原油投产。'),
-  facts=[('Asset','资产','Alaoma field, onshore Niger Delta','Alaoma油田，尼日尔三角洲陆上'),
+  lede=('An indigenous engineering and oilfield-services company that now holds 100% of the Alaoma heavy-oil field in Imo State, and is seeking investment to re-enter its existing wells and drill new ones.',
+        '一家尼日利亚本土工程及油田服务公司，现100%持有伊莫州Alaoma重油油田，正在寻求投资以重新进入现有油井并钻探新井。'),
+  facts=[('Asset','资产','Alaoma marginal field, OML 53 South','Alaoma边际油田，OML 53南部'),
+         ('Location','位置','Umuneke Ngo community, Ngor Okpala LGA, Imo State (onshore Niger Delta)','伊莫州Ngor Okpala地方政府区Umuneke Ngo社区（尼日尔三角洲陆上）'),
          ('Licence','许可证','Petroleum Prospecting Licence (PPL) 224, 100% held','石油勘探许可证（PPL）224，100%持有'),
-         ('Area','面积','34.06 km², carved out of OML 53','34.06平方公里，由OML 53划出'),
-         ('Licence granted','授予日期','28 June 2022','2022年6月28日'),
-         ('Product','产品','Heavy crude','重质原油'),
-         ('Managing director','董事总经理','Umweni Osarodion Johnbull','Umweni Osarodion Johnbull'),
-         ('Head office','总部','45 Old Etete Road, GRA, Benin City, Edo State','埃多州贝宁城GRA区Old Etete路45号')],
-  about=[('Hilltop holds PPL 224 over the Alaoma field, awarded under Nigeria\'s marginal field programme. The licence covers 34 km² carved out of OML 53 in the onshore Niger Delta and is registered with the Nigerian Upstream Petroleum Regulatory Commission (NUPRC) as 100% held by Hilltop.',
-          'Hilltop持有Alaoma油田的PPL 224许可证，该油田依据尼日利亚边际油田计划授予。许可区面积34平方公里，由尼日尔三角洲陆上的OML 53划出，在尼日利亚上游石油监管委员会（NUPRC）登记为Hilltop 100%持有。'),
-         ('The company is seeking an investor to fund the development of the field and the production of its heavy crude.',
-          '公司正在寻求投资者，为油田开发及重质原油生产提供资金。')],
-  seeking=[('Equity or development finance for the Alaoma field','Alaoma油田的股权投资或开发融资'),
+         ('Licence granted','授予日期','28 June 2022, by NUPRC','2022年6月28日，由NUPRC授予'),
+         ('Licence area','许可区面积','34.06 km²','34.06平方公里'),
+         ('Discovery','发现','Discovered by Chevron in 1996; existing wells on the field','1996年由雪佛龙发现；油田上已有油井'),
+         ('Crude','原油','Heavy, biodegraded oil, 8–18° API','重质生物降解原油，API度8–18°'),
+         ('Status','现状','Land and site preparation complete; drilling rig selected; NUPRC approval for well re-entry in progress','土地及场地准备已完成；钻机已选定；油井重入的NUPRC审批正在办理'),
+         ('Group CEO','集团首席执行官','Dr Charles Osazuwa','Charles Osazuwa博士'),
+         ('Offices','办公地点','Benin City (head office), Abuja, Houston','贝宁城（总部）、阿布贾、休斯敦')],
+  about=[('Hilltop holds Petroleum Prospecting Licence 224 over the Alaoma marginal field, awarded by the Nigerian Upstream Petroleum Regulatory Commission (NUPRC) on 28 June 2022 and registered as 100% held by Hilltop. The field lies in the south-east of OML 53, onshore Imo State. Chevron discovered it in 1996, and fluid typing shows heavy, biodegraded oil of 8 to 18° API with large resource volumes. Jisike, in the north-west of the same block, is already in production.',
+          'Hilltop持有Alaoma边际油田的第224号石油勘探许可证，该许可证由尼日利亚上游石油监管委员会（NUPRC）于2022年6月28日授予，登记为Hilltop 100%持有。油田位于伊莫州陆上OML 53区块东南部，1996年由雪佛龙发现。流体分析显示其为API度8至18°的重质生物降解原油，资源量较大。同一区块西北部的Jisike油田已投入生产。'),
+         ('Groundwork on the field is done. Survey and mapping of the operating area, engagement with landowners across the host communities, land acquisition for well re-entry and the facilities layout, and site clearing are all complete. A drilling rig has been inspected and selected, and Hilltop is obtaining NUPRC approval to re-enter the existing Chevron wells and to drill new wells.',
+          '油田前期工作已经完成：作业区勘测与测绘、与各东道社区土地所有者的沟通、油井重入及设施布局所需土地的征用以及场地清理均已完工。公司已完成钻机考察与选定，并正在申请NUPRC批准，以重新进入雪佛龙原有油井并钻探新井。'),
+         ('Hilltop started as an engineering, procurement and construction (EPC) and oilfield-services company and still runs that business. Its work includes supplying pressure control valves for well operations to NNPC Exploration & Production Ltd, bill-of-materials and cost control for a 120 MMSCFD gas compression and dehydration plant on OML 111, and engineering support for the design of a 29-tank LPG storage terminal at Ovade-Ogharefe. It runs a quality management system aligned with ISO 9001:2015.',
+          'Hilltop最初是一家工程、采购与施工（EPC）及油田服务公司，目前仍经营该业务。其业绩包括：为尼日利亚国家石油公司勘探与生产有限公司（NEPL）供应油井作业用压力控制阀；为OML 111区块一座日处理1.2亿标准立方英尺的天然气压缩脱水厂提供物料清单及成本控制服务；为Ovade-Ogharefe一座含29个储罐的液化石油气储运站的设计提供工程支持。公司按照ISO 9001:2015标准运行质量管理体系。')],
+  seeking=[('Equity or development finance to re-enter the existing wells and drill new ones','用于重入现有油井及钻探新井的股权投资或开发融资'),
            ('Technical partners with heavy-oil production experience','具有重油开采经验的技术合作伙伴'),
            ('Drilling, well-services and early-production-facility contractors','钻井、井下作业及早期生产设施承包商'),
-           ('Crude offtakers','原油承购方')],
-  docs=[('Company profile','公司简介')],
+           ('Offtakers and refiners for heavy crude','重质原油的承购方及炼厂')],
+  docs=[('Company profile, with field survey and rig inspection photographs','公司简介（附油田勘测及钻机考察照片）'),
+        ('NUPRC licence record for PPL 224','PPL 224的NUPRC许可证登记记录')],
   sources=[('NUPRC concession situation, 1 April 2026','https://www.nuprc.gov.ng/wp-content/uploads/2026/04/NUPRC-Concession-Situation-@-1st-April-2026-V.1.pdf')]),
 
  dict(slug='boj-energy', name='BOJ Energy Ltd', zh='BOJ能源有限公司',
@@ -114,7 +121,7 @@ COMPANIES = [
            ('Global Energy Monitor: Ace Gas Nigeria FLNG Terminal','https://gem.wiki/Ace_Gas_Nigeria_FLNG_Terminal')]),
 ]
 
-IMAGES = {'alfan-gas': [('/assets/photo-flare-recovery.jpg', 'Gas processing modules', '天然气处理模块'), ('/assets/photo-pipeline.jpg', 'Gas pipeline', '天然气管道')], 'reditto-centrale': [('/assets/photo-lng-terminal.jpg', 'Coastal industrial and storage terminal', '沿海工业及储运码头'), ('/assets/exhibitors/industrial-site.jpg', 'Industrial site under construction', '在建工业场地')], 'hilltop-global': [('/assets/exhibitors/upstream-crew.jpg', 'Onshore wellsite crew', '陆上井场作业人员'), ('/assets/photo-pipeline.jpg', 'Onshore flowline', '陆上集输管线')], 'boj-energy': [('/assets/photo-pipeline.jpg', 'Onshore production facilities', '陆上生产设施'), ('/assets/exhibitors/upstream-crew.jpg', 'Wellsite operations', '井场作业')], 'ace-energy': [('/assets/photo-lng-flng.jpg', 'Floating LNG and export', '浮式液化天然气及外输'), ('/assets/photo-hero-fpso.jpg', 'Offshore gas processing', '海上天然气处理')]}
+IMAGES = {'alfan-gas': [('/assets/photo-flare-recovery.jpg', 'Gas processing modules', '天然气处理模块'), ('/assets/photo-pipeline.jpg', 'Gas pipeline', '天然气管道')], 'reditto-centrale': [('/assets/photo-lng-terminal.jpg', 'Coastal industrial and storage terminal', '沿海工业及储运码头'), ('/assets/exhibitors/industrial-site.jpg', 'Industrial site under construction', '在建工业场地')], 'hilltop-global': [('/assets/exhibitors/hilltop-alaoma-site.jpg', 'Alaoma field: cleared site', 'Alaoma油田：已清理场地'), ('/assets/exhibitors/hilltop-rig-inspection.jpg', 'Rig inspection for Alaoma', 'Alaoma钻机考察'), ('/assets/exhibitors/hilltop-wellhead.jpg', 'Existing Alaoma wellhead', 'Alaoma现有井口')], 'boj-energy': [('/assets/photo-pipeline.jpg', 'Onshore production facilities', '陆上生产设施'), ('/assets/exhibitors/upstream-crew.jpg', 'Wellsite operations', '井场作业')], 'ace-energy': [('/assets/photo-lng-flng.jpg', 'Floating LNG and export', '浮式液化天然气及外输'), ('/assets/photo-hero-fpso.jpg', 'Offshore gas processing', '海上天然气处理')]}
 
 TPL = open(os.path.join(os.path.dirname(__file__), 'page.tpl')).read()
 
@@ -133,12 +140,17 @@ for c in COMPANIES:
     desc = c['lede'][0]
     ims = IMAGES[c['slug']]
     gallery = ''.join(f'<figure><img src="{E(u)}" alt="{E(a)}" loading="{"eager" if i==0 else "lazy"}"><figcaption data-zh="{E(z)}">{E(a)}</figcaption></figure>' for i,(u,a,z) in enumerate(ims))
+    if c.get('own_photos'):
+        note = ('<p class="illus" data-zh="照片由企业提供。">Photographs supplied by the company.</p>')
+    else:
+        note = ('<p class="illus" data-zh="示意图片。企业提供实景照片后将予以替换。">Illustrative images. They will be replaced with the company\'s own photographs once supplied.</p>')
+    grid = 'grid three' if len(ims) == 3 else 'grid'
     out = (TPL.replace('{{NAME}}', E(c['name'])).replace('{{NAME_ZH}}', E(c['zh'])).replace('{{URL}}', url)
            .replace('{{DESC}}', E(desc)).replace('{{KICKER}}', E(c['kicker'][0])).replace('{{KICKER_ZH}}', E(c['kicker'][1]))
            .replace('{{LEDE}}', E(c['lede'][0])).replace('{{LEDE_ZH}}', E(c['lede'][1]))
            .replace('{{FACTS}}', facts).replace('{{ABOUT}}', about).replace('{{SEEKING}}', li(c['seeking']))
            .replace('{{DOCS}}', docs).replace('{{SOURCES}}', src)
            .replace('{{MAILTO}}', f'mailto:{MAIL}?subject={subj}&amp;body={body}')
-           .replace('{{GALLERY}}', gallery).replace('{{OGIMG}}', SITE + ims[0][0]).replace('{{SLUG}}', c['slug']).replace('{{JSONLD}}', json.dumps({"@context": "https://schema.org", "@type": "Organization", "name": c['name'], "description": desc, "url": url}, ensure_ascii=False)))
+           .replace('{{GALLERY}}', gallery).replace('{{GALLERYNOTE}}', note).replace('{{GRIDCLASS}}', grid).replace('{{OGIMG}}', SITE + ims[0][0]).replace('{{SLUG}}', c['slug']).replace('{{JSONLD}}', json.dumps({"@context": "https://schema.org", "@type": "Organization", "name": c['name'], "description": desc, "url": url}, ensure_ascii=False)))
     open(os.path.join(OUT, c['slug'] + '.html'), 'w').write(out)
     print(c['slug'], len(out))
