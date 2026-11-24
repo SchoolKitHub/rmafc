@@ -143,17 +143,35 @@ export default async function handler(req, res) {
   // is saved without them and they are written into "Other information" instead.
   const extra = {
     'Company address': d.address || '',
-    'Fundraise amount': d.fundraise || ''
+    'Fundraise amount': d.fundraise || '',
+    'Investible amount': d.investible || '',
+    'Project stage': d.stage || '',
+    'Partnership sought': d.partnership || '',
+    'Licence or asset': d.asset || '',
+    'Project location': d.location || '',
+    'Capacity or output': d.capacity || ''
   };
 
   try {
-    try {
-      await airtableCreate({ ...base, ...extra });
-    } catch (err) {
-      if (!/UNKNOWN_FIELD_NAME/.test(String(err && err.message))) throw err;
-      console.error('airtable: missing column for new fields, saving them in Other information', err.message);
-      const note = Object.entries(extra).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n');
-      await airtableCreate({ ...base, 'Other information': [base['Other information'], note].filter(Boolean).join('\n\n') });
+    // Drop any column Airtable does not know yet, one at a time, and keep its
+    // value in "Other information" so nothing the delegate typed is lost.
+    const cols = { ...extra };
+    const moved = [];
+    for (let attempt = 0; ; attempt++) {
+      try {
+        const note = moved.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join('\n');
+        const other = [base['Other information'], note].filter(Boolean).join('\n\n');
+        await airtableCreate({ ...base, ...cols, 'Other information': other });
+        break;
+      } catch (err) {
+        const msg = String(err && err.message);
+        if (!/UNKNOWN_FIELD_NAME/.test(msg) || attempt >= Object.keys(extra).length) throw err;
+        const name = (msg.match(/Unknown field name: \\?"([^"\\]+)\\?"/) || [])[1];
+        const drop = name && name in cols ? [name] : Object.keys(cols);
+        console.error('airtable: no column for', drop.join(', '), '- saving in Other information');
+        for (const k of drop) { moved.push([k, cols[k]]); delete cols[k]; }
+        if (!drop.length) throw err;
+      }
     }
   } catch (err) {
     console.error('airtable failed', err);
