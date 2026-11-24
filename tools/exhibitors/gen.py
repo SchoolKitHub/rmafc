@@ -114,6 +114,8 @@ COMPANIES = [
            ('Global Energy Monitor: Ace Gas Nigeria FLNG Terminal','https://gem.wiki/Ace_Gas_Nigeria_FLNG_Terminal')]),
 ]
 
+IMAGES = {'alfan-gas': [('/assets/photo-flare-recovery.jpg', 'Gas processing modules', '天然气处理模块'), ('/assets/photo-pipeline.jpg', 'Gas pipeline', '天然气管道')], 'reditto-centrale': [('/assets/photo-lng-terminal.jpg', 'Coastal industrial and storage terminal', '沿海工业及储运码头'), ('/assets/exhibitors/industrial-site.jpg', 'Industrial site under construction', '在建工业场地')], 'hilltop-global': [('/assets/exhibitors/upstream-crew.jpg', 'Onshore wellsite crew', '陆上井场作业人员'), ('/assets/photo-pipeline.jpg', 'Onshore flowline', '陆上集输管线')], 'boj-energy': [('/assets/photo-pipeline.jpg', 'Onshore production facilities', '陆上生产设施'), ('/assets/exhibitors/upstream-crew.jpg', 'Wellsite operations', '井场作业')], 'ace-energy': [('/assets/photo-lng-flng.jpg', 'Floating LNG and export', '浮式液化天然气及外输'), ('/assets/photo-hero-fpso.jpg', 'Offshore gas processing', '海上天然气处理')]}
+
 TPL = open(os.path.join(os.path.dirname(__file__), 'page.tpl')).read()
 
 def li(items):
@@ -129,12 +131,14 @@ for c in COMPANIES:
             '</ul><p class="small" data-zh="已注册代表可通过秘书处索取。">Available to registered delegates on request through the secretariat.</p></div>') if c['docs'] else ''
     src = ('<p class="small src"><span data-zh="公开来源：">Public sources:</span> ' + ' · '.join(f'<a href="{E(u)}" target="_blank" rel="noopener">{E(t)}</a>' for t, u in c['sources']) + '</p>') if c['sources'] else ''
     desc = c['lede'][0]
+    ims = IMAGES[c['slug']]
+    gallery = ''.join(f'<figure><img src="{E(u)}" alt="{E(a)}" loading="{"eager" if i==0 else "lazy"}"><figcaption data-zh="{E(z)}">{E(a)}</figcaption></figure>' for i,(u,a,z) in enumerate(ims))
     out = (TPL.replace('{{NAME}}', E(c['name'])).replace('{{NAME_ZH}}', E(c['zh'])).replace('{{URL}}', url)
            .replace('{{DESC}}', E(desc)).replace('{{KICKER}}', E(c['kicker'][0])).replace('{{KICKER_ZH}}', E(c['kicker'][1]))
            .replace('{{LEDE}}', E(c['lede'][0])).replace('{{LEDE_ZH}}', E(c['lede'][1]))
            .replace('{{FACTS}}', facts).replace('{{ABOUT}}', about).replace('{{SEEKING}}', li(c['seeking']))
            .replace('{{DOCS}}', docs).replace('{{SOURCES}}', src)
            .replace('{{MAILTO}}', f'mailto:{MAIL}?subject={subj}&amp;body={body}')
-           .replace('{{SLUG}}', c['slug']).replace('{{JSONLD}}', json.dumps({"@context": "https://schema.org", "@type": "Organization", "name": c['name'], "description": desc, "url": url}, ensure_ascii=False)))
+           .replace('{{GALLERY}}', gallery).replace('{{OGIMG}}', SITE + ims[0][0]).replace('{{SLUG}}', c['slug']).replace('{{JSONLD}}', json.dumps({"@context": "https://schema.org", "@type": "Organization", "name": c['name'], "description": desc, "url": url}, ensure_ascii=False)))
     open(os.path.join(OUT, c['slug'] + '.html'), 'w').write(out)
     print(c['slug'], len(out))
