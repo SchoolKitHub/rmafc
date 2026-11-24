@@ -9,6 +9,8 @@
 //   MAIL_REPLY_TO       optional inbox that receives replies to the confirmation
 //   MAIL_BCC            optional secretariat address copied on every confirmation
 //   RESEND_AUDIENCE_ID  optional legacy audience id; omit to add registrants as global contacts
+//   RESEND_SEGMENT_ID   segment every registrant joins so broadcasts reach them
+//                       (default: the main "Summit participants" segment)
 //   BLOB_READ_WRITE_TOKEN  added automatically when you create a Blob store
 
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || 'appoMRpjGyCkdRKob';
@@ -85,29 +87,42 @@ async function sendConfirmation(d, ref) {
   if (!r.ok) console.error('confirmation email failed', await r.text());
 }
 
-// Adds the registrant to Resend Contacts so they can receive broadcasts.
-// Uses a global contact unless RESEND_AUDIENCE_ID is set (legacy audiences).
+// Adds the registrant to Resend Contacts and to the main mailing segment, so
+// every registrant receives the summit broadcasts. Uses a global contact unless
+// RESEND_AUDIENCE_ID is set (legacy audiences). Needs a full-access API key:
+// a sending-only key can send the confirmation but cannot create contacts.
+const RESEND_SEGMENT_ID = process.env.RESEND_SEGMENT_ID || 'dc8fa623-857b-4eeb-9c88-66be5f9774b5';
+
 async function addContact(d) {
   if (!process.env.RESEND_API_KEY) return;
+  const email = String(d.email).trim();
   const parts = String(d.fullName || '').trim().split(/\s+/);
   const audience = process.env.RESEND_AUDIENCE_ID;
+  const headers = {
+    Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+    'Content-Type': 'application/json'
+  };
   const url = audience
     ? `https://api.resend.com/audiences/${audience}/contacts`
     : 'https://api.resend.com/contacts';
   const r = await fetch(url, {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
+    headers,
     body: JSON.stringify({
-      email: String(d.email).trim(),
+      email,
       first_name: parts[0] || '',
       last_name: parts.slice(1).join(' '),
       unsubscribed: false
     })
   });
-  if (!r.ok) console.error('add contact failed', await r.text());
+  // An existing contact is fine: it still needs to be in the segment.
+  if (!r.ok) console.error('add contact failed', r.status, await r.text());
+  if (audience || !RESEND_SEGMENT_ID) return;
+  const s = await fetch(
+    `https://api.resend.com/contacts/${encodeURIComponent(email)}/segments/${RESEND_SEGMENT_ID}`,
+    { method: 'POST', headers }
+  );
+  if (!s.ok) console.error('add to segment failed', s.status, await s.text());
 }
 
 export default async function handler(req, res) {
