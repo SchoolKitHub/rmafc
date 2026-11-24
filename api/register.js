@@ -149,7 +149,8 @@ export default async function handler(req, res) {
     'Partnership sought': d.partnership || '',
     'Licence or asset': d.asset || '',
     'Project location': d.location || '',
-    'Capacity or output': d.capacity || ''
+    'Capacity or output': d.capacity || '',
+    'Source campaign': String(d.source || '').slice(0, 120)
   };
 
   try {
