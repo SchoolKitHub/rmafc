@@ -135,7 +135,7 @@ COMPANIES = [
            ('Global Energy Monitor: Ace Gas Nigeria FLNG Terminal','https://gem.wiki/Ace_Gas_Nigeria_FLNG_Terminal')]),
 ]
 
-IMAGES = {'alfan-gas': [('/assets/photo-flare-recovery.jpg', 'Gas processing modules', '天然气处理模块'), ('/assets/photo-pipeline.jpg', 'Gas pipeline', '天然气管道')], 'reditto-centrale': [('/assets/photo-lng-terminal.jpg', 'Coastal industrial and storage terminal', '沿海工业及储运码头'), ('/assets/exhibitors/industrial-site.jpg', 'Industrial site under construction', '在建工业场地')], 'hilltop-global': [('/assets/exhibitors/hilltop-alaoma-site.jpg', 'Alaoma field: cleared site', 'Alaoma油田：已清理场地'), ('/assets/exhibitors/hilltop-rig-inspection.jpg', 'Rig inspection for Alaoma', 'Alaoma钻机考察'), ('/assets/exhibitors/hilltop-wellhead.jpg', 'Existing Alaoma wellhead', 'Alaoma现有井口')], 'boj-energy': [('/assets/photo-pipeline.jpg', 'Onshore production facilities', '陆上生产设施'), ('/assets/exhibitors/upstream-crew.jpg', 'Wellsite operations', '井场作业')], 'ace-energy': [('/assets/exhibitors/ace-flng-render.jpg', 'ACE FLNG design render', 'ACE FLNG设计效果图'), ('/assets/exhibitors/ace-webstar-barge.jpg', 'Cryogenic gas barge for refurbishment', '待翻新的深冷天然气驳船')]}
+IMAGES = {'alfan-gas': [('/assets/photo-flare-recovery.jpg', 'Gas processing modules', '天然气处理模块'), ('/assets/photo-pipeline.jpg', 'Gas pipeline', '天然气管道')], 'reditto-centrale': [('/assets/photo-lng-terminal.jpg', 'Coastal industrial and storage terminal', '沿海工业及储运码头'), ('/assets/exhibitors/industrial-site.jpg', 'Industrial site under construction', '在建工业场地')], 'hilltop-global': [('/assets/exhibitors/hilltop-alaoma-site.jpg', 'Alaoma field: cleared site', 'Alaoma油田：已清理场地'), ('/assets/exhibitors/hilltop-rig-inspection.jpg', 'Rig inspection for Alaoma', 'Alaoma钻机考察'), ('/assets/exhibitors/hilltop-wellhead.jpg', 'Existing Alaoma wellhead', 'Alaoma现有井口')], 'boj-energy': [('/assets/photo-pipeline.jpg', 'Onshore production facilities', '陆上生产设施'), ('/assets/exhibitors/upstream-crew.jpg', 'Wellsite operations', '井场作业')], 'ace-energy': [('/assets/exhibitors/ace-offshore-lng.jpg', 'Offshore gas production', '海上天然气生产'), ('/assets/exhibitors/ace-flng-render.jpg', 'ACE FLNG design render', 'ACE FLNG设计效果图'), ('/assets/exhibitors/ace-gas-power-plant.jpg', 'Gas-fired power', '燃气发电'), ('/assets/exhibitors/ace-refinery.jpg', 'Refining', '炼油'), ('/assets/exhibitors/ace-field-crew.jpg', 'Field operations', '现场作业')]}
 
 TPL = open(os.path.join(os.path.dirname(__file__), 'page.tpl')).read()
 
@@ -160,7 +160,7 @@ for c in COMPANIES:
         note = ('<p class="illus" data-zh="照片由企业提供。">Photographs supplied by the company.</p>')
     else:
         note = ('<p class="illus" data-zh="示意图片。企业提供实景照片后将予以替换。">Illustrative images. They will be replaced with the company\'s own photographs once supplied.</p>')
-    grid = 'grid three' if len(ims) == 3 else 'grid'
+    grid = 'grid three' if len(ims) == 3 else ('grid many' if len(ims) == 5 else 'grid')
     out = (TPL.replace('{{NAME}}', E(c['name'])).replace('{{NAME_ZH}}', E(c['zh'])).replace('{{URL}}', url)
            .replace('{{DESC}}', E(desc)).replace('{{KICKER}}', E(c['kicker'][0])).replace('{{KICKER_ZH}}', E(c['kicker'][1]))
            .replace('{{LEDE}}', E(c['lede'][0])).replace('{{LEDE_ZH}}', E(c['lede'][1]))
