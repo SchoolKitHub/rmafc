@@ -101,40 +101,41 @@ COMPANIES = [
   docs=[],
   sources=[]),
 
- dict(slug='ace-energy', name='Ace Energy Group', zh='Ace能源集团',
-  kicker=('Gas · LNG, upstream and refining', '天然气 · 液化天然气、上游与炼化'),
-  lede=('A Lagos-based energy group developing the 3 MTPA Ace FLNG and 235 MW power barge offshore Escravos, near-term oil production in the Niger Delta, and a 100,000 bopd refinery at Burutu.',
-        '一家总部位于拉各斯的能源集团，正在开发埃斯克拉沃斯近海300万吨/年Ace浮式液化天然气（FLNG）及235兆瓦发电驳船、尼日尔三角洲近期原油生产项目，以及布鲁图日加工10万桶的炼油厂。'),
-  facts=[('Flagship project','旗舰项目','3 MTPA Ace FLNG and 235 MW power barge, about 10 km offshore Escravos','埃斯克拉沃斯近海约10公里处的300万吨/年Ace FLNG及235兆瓦发电驳船'),
-         ('Gas resource','天然气资源','Over 7 Tcf of non-associated and associated gas, four concessions within 100 km','逾7万亿立方英尺非伴生气及伴生气，100公里范围内四个区块'),
-         ('FLNG output','FLNG产出','3 MTPA LNG · 25,000 bopd condensate · 700 t/day LPG · 300 t/day propane, from 550 MMSCFD wet gas','液化天然气300万吨/年 · 凝析油2.5万桶/日 · 液化石油气700吨/日 · 丙烷300吨/日（处理湿气5.5亿立方英尺/日）'),
-         ('FLNG investment','FLNG投资额','About US$5.5 billion, integrated upstream and midstream','约55亿美元，上中游一体化'),
-         ('FLNG stage','FLNG阶段','FEED with Wison New Energies; first gas targeted Q2 2030','由惠生新能源开展FEED；目标2030年第二季度首气'),
-         ('Oil production','原油生产','Osuopele field (OML 46), Delta State: first oil by barge to Forcados targeted 9–12 months from sanction','三角洲州Osuopele油田（OML 46）：目标在投资决策后9–12个月通过驳船运往福卡多斯实现首油'),
-         ('Refining','炼化','100,000 bopd full-conversion refinery at Burutu, Delta State, in development','三角洲州布鲁图日加工10万桶全转化炼油厂，开发中'),
-         ('Head office','总部','6A Lapaz Place, Victoria Island, Lagos','拉各斯维多利亚岛Lapaz Place 6A号'),
-         ('Contact','联系人','Christopher Nwokolo','Christopher Nwokolo')],
-  about=[('Ace Energy Group works across the oil and gas chain through separate platforms for gas and FLNG, upstream oil, and refining and trading. Its Nigerian projects cover gas export, near-term crude production and domestic refining.',
-          'Ace能源集团通过天然气及FLNG、上游原油、炼化及贸易等独立平台覆盖油气全产业链。其在尼日利亚的项目涵盖天然气出口、近期原油生产和本土炼油。'),
-         ('The Ace FLNG and power barge are collocated to process wet gas from several sources around the Escravos and Forcados hub. The barge powers Ace\'s gas assets and nearby processing facilities; the FLNG produces LNG for export together with condensate, LPG and propane. Chinese contractor Wison New Energies completed pre-FEED in early 2024 and signed the FEED contract in December 2024. Liquefaction uses Chart Industries\' IPSMR technology, and Siemens Energy is lined up for power and compression. According to the company, NNPC has committed feedstock gas.',
-          'Ace FLNG与发电驳船同址布置，处理埃斯克拉沃斯和福卡多斯枢纽周边多个来源的湿气。发电驳船为Ace的天然气资产及附近处理设施供电；FLNG生产出口液化天然气，同时产出凝析油、液化石油气和丙烷。中国承包商惠生新能源（Wison New Energies）于2024年初完成预可研设计（pre-FEED），并于2024年12月签署FEED合同。液化工艺采用Chart公司的IPSMR技术，西门子能源负责发电和压缩系统。据公司介绍，NNPC已承诺提供原料气。'),
-         ('In upstream oil, Ace plans fast first oil from the Osuopele swamp field in Delta State, shipping crude by barge to Forcados and using its own FPSO as a storage and export hub. A second phase would tie in the Bita field (OML 95), the Bilabri field (OML 122) and the deepwater OPL 289. Outside Nigeria, the group holds or is pursuing acreage in Angola, Gabon and Somaliland.',
-          '在上游原油方面，Ace计划通过三角洲州Osuopele沼泽油田快速实现首油，以驳船将原油运至福卡多斯，并以自有FPSO作为储存和外输枢纽。第二阶段将接入Bita油田（OML 95）、Bilabri油田（OML 122）及深水区块OPL 289。在尼日利亚以外，集团在安哥拉、加蓬和索马里兰持有或正在争取区块。'),
-         ('Ace Global Refining and Trading, the group\'s downstream arm, is developing a 100,000 bopd full-conversion refinery at Burutu in Delta State as part of nine refining, blending, petrochemical and storage projects in six countries. Its preferred contractor panel includes Wison, CNCEC, TCC and CMEC.',
-          '集团下游平台Ace全球炼化与贸易公司正在三角洲州布鲁图开发一座日加工10万桶的全转化炼油厂，该项目属于其在六个国家开发的九个炼油、调和、石化及仓储项目之一。其首选承包商包括惠生、中国化学工程、TCC和中国机械设备工程（CMEC）。'),
-         ('Ace has also partnered with NNPC on flare-to-value projects: barge-mounted and land-based flare-to-LNG, and flare gas to low-carbon aviation fuel.',
-          'Ace还与NNPC合作开发燃除气增值项目：驳船式及陆上燃除气制液化天然气，以及燃除气制低碳航空燃料。')],
-  seeking=[('Equity and project finance for the Ace FLNG (over US$1 billion)','Ace FLNG的股权投资与项目融资（逾10亿美元）'),
-           ('LNG offtakers and buyers in China','中国的液化天然气承购方和买家'),
-           ('Equity, debt and crude offtake for the Osuopele production hub','Osuopele生产枢纽的股权、债务融资及原油承购'),
-           ('EPC, fabrication and finance partners for the Burutu refinery','布鲁图炼油厂的EPC、制造及融资合作伙伴'),
-           ('Investors for flare-gas-to-LNG and aviation-fuel projects','燃除气制液化天然气及航空燃料项目的投资者')],
-  docs=[('NNPC–Ace FLNG terms of reference','NNPC–Ace FLNG项目任务书'),('Ace Global Refining and Trading company profile','Ace全球炼化与贸易公司简介'),('Ace upstream portfolio (investor teaser, under NDA)','Ace上游资产组合（投资者简介，需签署保密协议）')],
+ dict(slug='ace-energy', name='ACE Energy Group', zh='ACE能源集团',
+  own_photos='images',
+  kicker=('Gas · LNG, upstream, power and refining', '天然气 · 液化天然气、上游、电力与炼化'),
+  lede=('A Nigerian integrated energy group developing the 3 MTPA ACE FLNG offshore Escravos and eight more gas projects, near-term oil fields in the Niger Delta, gas-to-power barges and refineries.',
+        '一家尼日利亚综合能源集团，正在开发埃斯克拉沃斯近海300万吨/年ACE浮式液化天然气（FLNG）项目及另外八个天然气项目，以及尼日尔三角洲近期可投产油田、燃气发电驳船和炼油厂。'),
+  facts=[('Flagship project','旗舰项目','3 MTPA ACE FLNG with a 235 MW power barge, offshore Escravos','埃斯克拉沃斯近海300万吨/年ACE FLNG，配套235兆瓦发电驳船'),
+         ('FLNG feed gas','FLNG原料气','550 MMSCFD, from ACE-operated and third-party fields including OML 109, 49, 95, 62 and OPL 281','5.5亿立方英尺/日，来自ACE运营及第三方油田，包括OML 109、49、95、62及OPL 281'),
+         ('FLNG output','FLNG产出','3 MTPA LNG · 150,000 t/yr LPG · 75,000 t/yr propane · 25,000 bopd condensate','液化天然气300万吨/年 · 液化石油气15万吨/年 · 丙烷7.5万吨/年 · 凝析油2.5万桶/日'),
+         ('FLNG status','FLNG进展','Licence to Establish (Feb 2023); FEED under way; MOU and terms of reference with NNPC; Afreximbank mandate letter executed; first gas targeted Q2 2030','已获建设许可（2023年2月）；FEED进行中；已与NNPC签署谅解备忘录及任务书；已签署非洲进出口银行融资委托书；目标2030年第二季度首气'),
+         ('Gas portfolio','天然气项目组合','9 projects, 4 LNG hubs, over 11 MTPA of LNG capacity in development','9个项目、4个液化天然气枢纽，在开发液化天然气产能逾1,100万吨/年'),
+         ('Earliest cash flow','最早现金流','OML 20 gas processing for NLNG, first gas targeted Q2 2028','OML 20天然气处理项目（供应尼日利亚液化天然气公司），目标2028年第二季度首气'),
+         ('Upstream','上游','Osuopele SW (OML 46) and OPL 289 in Nigeria; blocks in Angola and Niger Republic; production target 40,000+ bopd','尼日利亚Osuopele SW（OML 46）及OPL 289；安哥拉及尼日尔共和国区块；产量目标4万桶/日以上'),
+         ('Group CEO','集团首席执行官','Engr. Christopher Nwokolo','Christopher Nwokolo工程师'),
+         ('Offices','办公地点','Lagos (head office), Port Harcourt, Ontario','拉各斯（总部）、哈科特港、安大略')],
+  about=[('ACE Energy Group is a Nigerian integrated energy group with six specialist companies covering upstream, midstream gas and FLNG, power, refining and trading, energy services and EPC. It is led by Engr. Christopher Nwokolo, formerly Gas Interface Operations Manager at Seplat, with earlier roles at SNEPCo and Chevron.',
+          'ACE能源集团是一家尼日利亚综合能源集团，旗下六家专业公司覆盖上游、中游天然气及FLNG、电力、炼化及贸易、能源服务和EPC。集团由Christopher Nwokolo工程师领导，他曾任Seplat天然气接口运营经理，此前曾任职于SNEPCo和雪佛龙。'),
+         ('The 3 MTPA ACE FLNG offshore Escravos is the group\'s flagship. A co-located 235 MW power barge will take 50 MMSCFD of processed gas for nearby communities and industry. The project received its Licence to Establish in February 2023 and is in FEED with Chinese contractor Wison New Energies, with Chart, Baker Hughes and Siemens Energy among the delivery partners. Financing is being arranged under an executed Afreximbank mandate, and, according to the company, offtake interest has come from buyers including TCC of China.',
+          '埃斯克拉沃斯近海300万吨/年ACE FLNG是集团的旗舰项目。同址的235兆瓦发电驳船将使用5,000万立方英尺/日的处理气，为周边社区和工业供电。该项目于2023年2月获得建设许可，目前正与中国承包商惠生新能源开展FEED，Chart、贝克休斯和西门子能源等为交付合作伙伴。融资依据已签署的非洲进出口银行委托书安排；据公司介绍，包括中国TCC在内的买家已表达承购意向。'),
+         ('Behind it sits a gas portfolio of nine projects across the Niger Delta: a second 3 MTPA FLNG on OPL 289, a 200 MMSCFD gas processing plant on OML 20 supplying NLNG, a 2 MTPA LNG and energy hub at Burutu with NNPC feedstock terms signed in July 2026, a 1.2 MTPA LNG plant in the Lekki Free Trade Zone, the refurbishment of an existing cryogenic barge, four flare-to-LNG sites, inland LPG depots with power plants, and a 1 MTPA gas-to-methanol plant.',
+          '在此之外，集团在尼日尔三角洲拥有九个天然气项目：OPL 289第二座300万吨/年FLNG；OML 20一座日处理2亿立方英尺、向尼日利亚液化天然气公司供气的天然气处理厂；布鲁图200万吨/年液化天然气及能源枢纽（已于2026年7月与NNPC签署原料气条款）；莱基自由贸易区120万吨/年液化天然气厂；一艘现有深冷驳船的翻新；四个燃除气制液化天然气站点；配套发电厂的内陆液化石油气库；以及一座100万吨/年天然气制甲醇厂。'),
+         ('Upstream, ACE is developing two Niger Delta assets with Baker Hughes and Halliburton: Osuopele SW in OML 46, a fully appraised field with ten hydrocarbon-bearing reservoirs, and OPL 289, which it is invited to develop with the concession holder. The group also holds blocks KON 3, KON 10 and KON 14 in Angola\'s Kwanza Basin and three blocks in Niger Republic.',
+          '上游方面，ACE正与贝克休斯和哈里伯顿合作开发尼日尔三角洲两项资产：OML 46内已完成评价、拥有十个含油气储层的Osuopele SW油田，以及应区块持有人邀请开发的OPL 289。集团还持有安哥拉宽扎盆地KON 3、KON 10和KON 14区块及尼日尔共和国三个区块。'),
+         ('In power and refining, the group is developing a 500 MW floating power barge for Lagos State at Ijora, with final investment decision targeted for Q4 2027, a 500 MW plant at the Port of Lomé, Togo, and refineries with Wison Engineering, including a 100,000 bpsd refinery at the Burutu hub.',
+          '在电力和炼化方面，集团正在拉各斯州伊乔拉开发一座500兆瓦浮式发电驳船（目标2027年第四季度最终投资决定），在多哥洛美港开发一座500兆瓦电厂，并与惠生工程合作开发炼油厂，其中包括布鲁图枢纽一座日加工10万桶的炼油厂。')],
+  seeking=[('Equity at project and SPV level, and senior and mezzanine project finance','项目及特殊目的公司层面的股权投资，以及优先级和夹层项目融资'),
+           ('Long-term LNG, LPG and methanol offtake, including buyers in China','长期液化天然气、液化石油气及甲醇承购，包括中国买家'),
+           ('LC and bank guarantee lines for long-lead equipment','长周期设备的信用证及银行保函额度'),
+           ('EPC, fabrication and technology partners for FLNG, gas processing and power barges','FLNG、天然气处理及发电驳船的EPC、制造与技术合作伙伴'),
+           ('Partners for the Osuopele and OPL 289 oil developments','Osuopele及OPL 289原油开发合作伙伴')],
+  docs=[('ACE Energy Group corporate profile','ACE能源集团公司简介'),('ACE Gas & FLNG midstream investor profile (Nov 2026)','ACE天然气及FLNG公司中游投资者简介（2026年11月）'),('ACE upstream portfolio investor deck (under NDA)','ACE上游资产组合投资者简报（需签署保密协议）'),('NNPC–ACE FLNG terms of reference','NNPC–ACE FLNG项目任务书'),('ACE Global Refining and Trading company profile','ACE全球炼化与贸易公司简介')],
   sources=[('Gas Processing & LNG: Wison New Energies and Ace Gas & FLNG sign FEED contract','https://www.gasprocessingnews.com/news/2024/12/wison-new-energies-ace-gas-flng-sign-feed-contract-for-nigeria-flng-project/'),
            ('Global Energy Monitor: Ace Gas Nigeria FLNG Terminal','https://gem.wiki/Ace_Gas_Nigeria_FLNG_Terminal')]),
 ]
 
-IMAGES = {'alfan-gas': [('/assets/photo-flare-recovery.jpg', 'Gas processing modules', '天然气处理模块'), ('/assets/photo-pipeline.jpg', 'Gas pipeline', '天然气管道')], 'reditto-centrale': [('/assets/photo-lng-terminal.jpg', 'Coastal industrial and storage terminal', '沿海工业及储运码头'), ('/assets/exhibitors/industrial-site.jpg', 'Industrial site under construction', '在建工业场地')], 'hilltop-global': [('/assets/exhibitors/hilltop-alaoma-site.jpg', 'Alaoma field: cleared site', 'Alaoma油田：已清理场地'), ('/assets/exhibitors/hilltop-rig-inspection.jpg', 'Rig inspection for Alaoma', 'Alaoma钻机考察'), ('/assets/exhibitors/hilltop-wellhead.jpg', 'Existing Alaoma wellhead', 'Alaoma现有井口')], 'boj-energy': [('/assets/photo-pipeline.jpg', 'Onshore production facilities', '陆上生产设施'), ('/assets/exhibitors/upstream-crew.jpg', 'Wellsite operations', '井场作业')], 'ace-energy': [('/assets/photo-lng-flng.jpg', 'Floating LNG and export', '浮式液化天然气及外输'), ('/assets/photo-hero-fpso.jpg', 'Offshore gas processing', '海上天然气处理')]}
+IMAGES = {'alfan-gas': [('/assets/photo-flare-recovery.jpg', 'Gas processing modules', '天然气处理模块'), ('/assets/photo-pipeline.jpg', 'Gas pipeline', '天然气管道')], 'reditto-centrale': [('/assets/photo-lng-terminal.jpg', 'Coastal industrial and storage terminal', '沿海工业及储运码头'), ('/assets/exhibitors/industrial-site.jpg', 'Industrial site under construction', '在建工业场地')], 'hilltop-global': [('/assets/exhibitors/hilltop-alaoma-site.jpg', 'Alaoma field: cleared site', 'Alaoma油田：已清理场地'), ('/assets/exhibitors/hilltop-rig-inspection.jpg', 'Rig inspection for Alaoma', 'Alaoma钻机考察'), ('/assets/exhibitors/hilltop-wellhead.jpg', 'Existing Alaoma wellhead', 'Alaoma现有井口')], 'boj-energy': [('/assets/photo-pipeline.jpg', 'Onshore production facilities', '陆上生产设施'), ('/assets/exhibitors/upstream-crew.jpg', 'Wellsite operations', '井场作业')], 'ace-energy': [('/assets/exhibitors/ace-flng-render.jpg', 'ACE FLNG design render', 'ACE FLNG设计效果图'), ('/assets/exhibitors/ace-webstar-barge.jpg', 'Cryogenic gas barge for refurbishment', '待翻新的深冷天然气驳船')]}
 
 TPL = open(os.path.join(os.path.dirname(__file__), 'page.tpl')).read()
 
@@ -153,7 +154,9 @@ for c in COMPANIES:
     desc = c['lede'][0]
     ims = IMAGES[c['slug']]
     gallery = ''.join(f'<figure><img src="{E(u)}" alt="{E(a)}" loading="{"eager" if i==0 else "lazy"}"><figcaption data-zh="{E(z)}">{E(a)}</figcaption></figure>' for i,(u,a,z) in enumerate(ims))
-    if c.get('own_photos'):
+    if c.get('own_photos') == 'images':
+        note = ('<p class="illus" data-zh="图片由企业提供。">Images supplied by the company.</p>')
+    elif c.get('own_photos'):
         note = ('<p class="illus" data-zh="照片由企业提供。">Photographs supplied by the company.</p>')
     else:
         note = ('<p class="illus" data-zh="示意图片。企业提供实景照片后将予以替换。">Illustrative images. They will be replaced with the company\'s own photographs once supplied.</p>')
