@@ -12,6 +12,9 @@
 //   RESEND_SEGMENT_ID   segment every registrant joins so broadcasts reach them
 //                       (default: the main "Summit participants" segment)
 //   BLOB_READ_WRITE_TOKEN  added automatically when you create a Blob store
+//   TERMII_API_KEY, TERMII_SENDER_ID  optional; send an SMS receipt (see lib/sms.js)
+
+import { sendSms, smsConfigured } from '../lib/sms.js';
 
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || 'appoMRpjGyCkdRKob';
 
@@ -198,6 +201,17 @@ export default async function handler(req, res) {
     await sendConfirmation({ ...d, attachments }, ref);
   } catch (err) {
     console.error('email failed', err);
+  }
+
+  // SMS receipt: transactional, so it goes on the DND route and carries no marketing.
+  if (smsConfigured() && d.phone) {
+    try {
+      const first = String(d.fullName).trim().split(/\s+/)[0];
+      const r = await sendSms(d.phone, `RMAFC Summit: ${first.slice(0, 20)}, your registration is received. Ref ${ref}. Beijing, 24-25 Feb 2027. Info: summit@rmafcinvestmentsummit2026.org`);
+      if (!r.ok) console.error('sms failed', r.error);
+    } catch (err) {
+      console.error('sms failed', err);
+    }
   }
 
   try {
